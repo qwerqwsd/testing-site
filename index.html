@@ -7,9 +7,167 @@
 	<title>Portfolio</title>
 	
 	<link rel=“stylesheet” type=“text/css” href=“css.css”>.
+<style>
+/* 노말라이즈 시작 */
+html, body {
+  /* 어떠한 경우에도 body 에 가로스크롤바가 생기지 않습니다. */
+  overflow-x:hidden;
+}
 
 
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
 
+a {
+  color:inherit;
+}
+/* 노말라이즈 끝 */
+
+/* 라이브러리 시작 */
+.con {
+  width:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-box > img {
+  /* 이미지 주변에 쓸떼없이 생기는 여백이 사라진다. 즉 글자로서의 특징이 사라진다. */
+  display:block;
+  /* 이걸 해줘야 이미지 너비가 유연해집니다. */
+  width:100%;
+}
+
+.cell {
+  float:left;
+  box-sizing:border-box;
+}
+
+/* .row가 float 요소들의 부모이기 때문에 아래와 같이 처리해 주지 않으면 높이가 0이 될 수 있습니다. */
+.row::after {
+  /* 막내를 추가하고, 참고로 막내는 float 요소가 아닙니다. */
+  content:"";
+  /* 아래 2개의 속석은 추가된 막내를 형들(float 요소들) 밑에 깔리게 합니다. */
+  display:block;
+  clear:both;
+}
+/* 라이브러리 끝 */
+
+/* 커스텀 시작 */
+.con {
+  max-width:1000px;
+}
+
+.top-bn-box {
+  margin-top:-100px;
+  overflow:hidden;
+}
+
+@media ( max-width:700px ) {
+  /* 이렇게 하면 이미지의 너비/높이가 결과적으로 종래의 100% 보다 50% 늘어납니다. */
+  .top-bn-box > .img-box {
+    margin-left:-50%;
+  }
+}
+
+.list1 .cell {
+  width:20%;
+  padding-left:10px;
+  padding-right:10px;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+.list1 .cell:hover > .product-name {
+  text-decoration:underline;
+}
+
+.list1 .cell > .product-name {
+  font-weight:bold;
+  margin-top:10px;
+  text-align:center;
+}
+
+/* 이렇게 하면 오직 .row 만 너비가 늘어난다. */
+.list1 .row {
+  margin-left:-10px;
+  margin-right:-10px;
+}
+
+@media ( max-width:1000px ) {
+  .list1 .cell {
+    width:33.3333%;
+  }
+}
+
+@media ( max-width:850px ) {
+  .list1 .cell {
+    width:50%;
+  }
+}
+
+@media ( max-width:650px ) {
+  .list1 .cell {
+    width:100%;
+  }
+}
+
+.copy {
+  margin-top:50px;
+  text-align:center;
+  padding-bottom:20px;
+}
+	
+	
+	
+	
+/* 커스텀 끝 */
+	
+	
+
+  /* 로보토 Condensed 폰트 */
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+  /* 롯데마트드림 폰트 */
+  @font-face {
+    font-family: "LotteMartDream";
+    font-style: normal;
+    font-weight: 400;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2")
+      format("woff2"),
+      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "LotteMartDream";
+    font-style: normal;
+    font-weight: 700;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2")
+      format("woff2"),
+      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff")
+      format("woff");
+  }
+
+  @font-face {
+    font-family: "LotteMartDream";
+    font-style: normal;
+    font-weight: 300;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2")
+      format("woff2"),
+      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff")
+      format("woff");
+  }
+
+  html {
+    font-family: "Roboto Condensed", "LotteMartDream", sans-serif;
+  }
+	
+	
+	
+</style>
 </head>
 <body>
 
@@ -103,43 +261,5 @@
 </div>
 
 
-<style>
-  /* 로보토 Condensed 폰트 */
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
-
-  /* 롯데마트드림 폰트 */
-  @font-face {
-    font-family: "LotteMartDream";
-    font-style: normal;
-    font-weight: 400;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2")
-      format("woff2"),
-      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: "LotteMartDream";
-    font-style: normal;
-    font-weight: 700;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2")
-      format("woff2"),
-      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: "LotteMartDream";
-    font-style: normal;
-    font-weight: 300;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2")
-      format("woff2"),
-      url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff")
-      format("woff");
-  }
-
-  html {
-    font-family: "Roboto Condensed", "LotteMartDream", sans-serif;
-  }
 </body>
 </html>
